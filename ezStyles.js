@@ -1,7 +1,7 @@
 ;(function () {
   var exp = {create: createStyleSheet, remove: removeStyleSheet, append: appendRules};
-  if (typeof (module) != undefined) module.exports = exp;
-  else if (typeof (window) != undefined) window.ezStyles = exp;
+  if (typeof (module) != 'undefined') module.exports = exp;
+  else if (typeof (window) != 'undefined') window.ezStyles = exp;
 
   function createStyleSheet(options) {
     options = options || {};
