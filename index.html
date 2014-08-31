@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ezstyles by Like-Falling-Leaves</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ezstyles</h1>
+        <p>Creating style sheets dynamically via javascript</p>
+
+        <p class="view"><a href="https://github.com/Like-Falling-Leaves/ezStyles">View the Project on GitHub <small>Like-Falling-Leaves/ezStyles</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Like-Falling-Leaves/ezStyles/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Like-Falling-Leaves/ezStyles/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Like-Falling-Leaves/ezStyles">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="ezstyles" class="anchor" href="#ezstyles"><span class="octicon octicon-link"></span></a>ezStyles</h1>
+
+<p>Creating style sheets dynamically via javascript.</p>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>If you are using ezStyles with <a href="https://github.com/substack/node-browserify">browserify</a> or some such mechanism, you can get it as an npm module</p>
+
+<pre><code>npm install ezstyles
+</code></pre>
+
+<p>If you are using it in the browser, you can direclty include <em>ezStyles.js</em> which has no dependencies.  Replace the path to the CDN location you are using in the following example:</p>
+
+<pre><code>&lt;script src="/like-falling-leaves.github.io/ezStyles/ezStyles.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a name="creating-a-style-sheet" class="anchor" href="#creating-a-style-sheet"><span class="octicon octicon-link"></span></a>Creating a style sheet</h2>
+
+<p>Usage:</p>
+
+<pre><code>// var ezStyles = require('ezstyle'); // for npm environments only.  for browser, this is a global
+ezStyles.create({
+   id: 'some_unique_id',  // this is the element ID
+   styles: [  // styles are provided as pairs: [selector, rule]
+      [ 'body', 'margin: 0; padding: 0;' ],
+      [ 'li:nth-child(even)', 'background-color: light-grey;']
+   ]
+});
+</code></pre>
+
+<h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<ul>
+<li>
+<em>id</em> is the unique id of the stylesheet.  It is useful to prevent the same stylesheet from being added again (if the id exists, nothing is done by this function). it is also useful if you want to remove this stylsheet later on or append more rules to it later on.</li>
+<li>
+<em>styles</em> is an array of CSS rules where each rule is specified as a pair: a <em>selector</em> and the actual <em>rule</em>.</li>
+</ul><h2>
+<a name="removing-a-style-sheet" class="anchor" href="#removing-a-style-sheet"><span class="octicon octicon-link"></span></a>Removing a style sheet</h2>
+
+<p>Usage:</p>
+
+<pre><code>ezStyles.remove('some_unique_id'); // the ID must match the ID provided in the create call.
+</code></pre>
+
+<h2>
+<a name="appending-to-a-style-sheet-that-was-created-before" class="anchor" href="#appending-to-a-style-sheet-that-was-created-before"><span class="octicon octicon-link"></span></a>Appending to a style sheet that was created before</h2>
+
+<p>Usage:</p>
+
+<pre><code>ezStyles.append(
+  'some_unique_id', // this ID should match the ID provided in the create call
+  [ // these rules are specified in the same format as in the create call
+     ['body', 'margin: 0; padding: 0; border: 0;']
+  ]
+);
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Like-Falling-Leaves">Like-Falling-Leaves</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
