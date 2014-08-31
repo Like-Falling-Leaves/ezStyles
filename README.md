@@ -11,7 +11,7 @@ If you are using ezStyles with [browserify](https://github.com/substack/node-bro
 
 If you are using it in the browser, you can direclty include <em>ezStyles.js</em> which has no dependencies.  Replace the path to the CDN location you are using in the following example:
 
-    <script src="//raw.githubusercontent.com/Like-Falling-Leaves/ezStyles/master/ezStyles.js"></script>
+    <script src="/like-falling-leaves.github.io/ezStyles/ezStyles.js"></script>
     
 
 ## Creating a style sheet
