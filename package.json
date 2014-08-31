@@ -1,0 +1,16 @@
+{
+  "name": "ezstyles",
+  "description": "Dynamically create style-sheets",
+  "keywords": ["css", "stylesheet"],
+  "homepage": "https://github.com/likefallingleaves/ezStyles",
+  "bugs": { "url": "https://github.com/likefallingleaves/ezStyles/issues" },
+  "license": "MIT",
+  "author": {"name": "Like FallingLeaves", "email": "likefallingleaves@gmail.com"},
+  "main": "./index.js",
+  "maintainers": [{"name": "Like FallingLeaves", "email": "likefallingleaves@gmail.com"}],
+  "version": "0.0.1",
+  "repository": { "type": "git", "url": "git://github.com/likefallingleaves/ezStyles.git" },
+  "readmeFilename": "README.md",
+  "dependencies": {},
+  "devDependencies": {}
+}
