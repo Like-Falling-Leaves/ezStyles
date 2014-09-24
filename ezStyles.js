@@ -17,10 +17,12 @@
   
   function addRules(elt, rules) {
     var sheet = elt.sheet;
-    for (var kk = 0; kk < rules.length; kk ++) {
-      var rule = rules[kk];
-      if (sheet.insertRule) sheet.insertRule(rule[0] + '{' + rule[1] + '}');
-      else sheet.addRule(rule[0], rule[1]);
+    for (var key in rules) { 
+      if ( !rules.hasOwnProperty(key)) continue;
+      var rule = rules[key];
+      if (typeof(key) != 'string') { key = rule[0]; rule = rule[1]; }
+      if (sheet.insertRule) sheet.insertRule(key + '{' + rule + '}');
+      else sheet.addRule(key, rule);
     }
     return elt;
   }

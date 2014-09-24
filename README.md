@@ -1,6 +1,8 @@
 # ezStyles
 
-Creating style sheets dynamically via javascript.
+Creating style sheets dynamically via javascript.  This is useful if you have a module with a very small set of styles and do not want to provide a separate CSS to download.
+
+[![NPM info](https://nodei.co/npm/ezStyles.png?downloads=true)](https://npmjs.org/package/ezStyles)
 
 ## Install
 
@@ -31,23 +33,38 @@ Usage:
 ### Options
 
 * <em>id</em> is the unique id of the stylesheet.  It is useful to prevent the same stylesheet from being added again (if the id exists, nothing is done by this function). it is also useful if you want to remove this stylsheet later on or append more rules to it later on.
-* <em>styles</em> is an array of CSS rules where each rule is specified as a pair: a <em>selector</em> and the actual <em>rule</em>.
+* <em>styles</em> is an array of CSS rules where each rule is specified as a pair: a <em>selector</em> and the actual <em>rule</em>.  You can also pass an object here instead of arrays with keys being the selector and values being the styles.
 
 ## Removing a style sheet
 
 Usage:
 
+```javascript
     ezStyles.remove('some_unique_id'); // the ID must match the ID provided in the create call.
-
+```
 
 ## Appending to a style sheet that was created before
 
 Usage:
 
+```javascript
     ezStyles.append(
       'some_unique_id', // this ID should match the ID provided in the create call
       [ // these rules are specified in the same format as in the create call
          ['body', 'margin: 0; padding: 0; border: 0;']
       ]
     );
-    
+```
+
+## Using objects instead of arrays
+
+Usage:
+
+```javascript
+    ezStyles.append(
+      'some_unique_id', // this ID should match the ID provided in the create call
+      { // these rules are specified in the same format as in the create call
+        body: 'margin: 0; padding: 0; border: 0;'
+      }
+    );
+```
