@@ -2,7 +2,7 @@
 
 Creating style sheets dynamically via javascript.  This is useful if you have a module with a very small set of styles and do not want to provide a separate CSS to download.
 
-[![NPM info](https://nodei.co/npm/ezStyles.png?downloads=true)](https://npmjs.org/package/ezStyles)
+[![NPM info](https://nodei.co/npm/ezstyles.png?downloads=true)](https://npmjs.org/package/ezstyles)
 
 ## Install
 
